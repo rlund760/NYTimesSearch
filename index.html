@@ -1,55 +1,114 @@
 <!DOCTYPE html>
-<html lang="en-us">
-   <head>
-      <meta charset="UTF-8">
-      <title>NYT Search</title>
-      <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
-      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-      <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-   </head>
-   <body>
-      <div class="body-container">
-         <div class="container jumbotron mt-5">
-            <h2><i class="far fa-newspaper"></i> New York Times Search</h2>
-         </div>
-         <div id="search-container">
-            <div class="title"><i class="fa fa-list-alt" aria-hidden="true"></i> Search Parameters</div>
-            <div class="col-sm-12 py-4">
-               <form>
-                  <div class="form-group">
-                     <label for="searchterm">Search Term:</label>
-                     <input type="text" class="form-control" id="searchterm">
-                  </div>
-                  <div class="form-group">
-                     <label for="records">Number of Records to Retrieve:</label>
-                     <select class="form-control" id="records">
-                        <option>1</option>
-                        <option>5</option>
-                        <option>10</option>
-                     </select>
-                  </div>
-                  <div class="form-group">
-                     <label for="startyear">Start Year (Optional):</label>
-                     <input type="number" class="form-control" id="startyear" min="1900">
-                  </div>
-                  <div class="form-group">
-                     <label for="endyear">End Year (Optional):</label>
-                     <input type="number" class="form-control" id="endyear" min="1900">
-                  </div>
-               </form>
-               <div id="search">
-                  <button type="submit" class="btn btn-primary"><i class="fas fa-search"></i> Search</button>
-               </div>
-               <div id="clear-search">
-                  <button type="submit" class="btn btn-primary"><i class="far fa-trash-alt"></i> Clear Results</button>
-               </div>
-            </div>
-         <div id="article-container"><div class="title"><i class="fas fa-newspaper"></i> Top Articles</div></div>
-         </div>
-         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-         <script src="assets/javascript/app.js"></script>
-         <footer class="footer py-5 mt-5"></footer>
-      </div>
-   </body>
+<html>
+<head>
+	<title>NYT API</title>
+</head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+<body>
+	
+
+<div class="container">
+	<div class="jumbotron title">
+  		<h1>New York Times Search</h1>
+	</div><br>
+
+<!-- Search -->
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title">Search Parameters</h3>
+  </div>
+  <div class="panel-body">
+    <div class="input-group col-sm-12">
+    	  <label for="sel1">Search Term:</label>
+      <input id="searchTerm" type="text" class="form-control" placeholder="Enter Keywords"><br>
+    </div><br>
+<!--  -->
+
+<div class="form-group">
+  <label for="sel1">Number of Records to Retrieve:</label>
+  <select id = "numRecords" class="form-control" id="sel1">
+    <option>5</option>
+    <option>10</option>
+    <option>15</option>
+  </select>
+</div><br>
+
+<!-- Date Range -->
+<div class="row">
+<div>
+	<div class = "col-sm-6">
+		<div class="input-group col-sm-12">
+			  <label for="sel1">Start Year (Required):</label>
+		  <input id="startYear" type="text" class="form-control" placeholder="Year Start" aria-describedby="basic-addon1">
+		</div>
+	</div>
+
+	<div class = "col-sm-6">
+		<div class="input-group col-sm-12">
+			<label for="sel1">End Year (Required):</label>
+		  <input id="endYear" type="text" class="form-control" placeholder="Year End " aria-describedby="basic-addon1">
+		</div>
+	</div>
+ </div>
+</div>
+<br>
+<!--  -->
+
+<!-- Buttons Start-->
+	<div class="row">
+		<div>
+			<div class = "col-sm-6">
+				<span class="input-group-btn">
+					<button id="searchButton" class="btn btn-default" type="button">Search</button>
+				</span>
+			</div>
+
+
+
+		<div class = "col-sm-6">
+			<span class="input-group-btn">
+				<button id="clearButton" class="btn btn-default" type="button">Clear</button>
+			</span>
+		</div>
+	</div>
+</div>
+
+
+
+<!-- Buttons end -->
+
+
+</div> 
+</div>
+
+<!-- Panel 1, last stop/divs -->
+
+
+
+
+<!-- Search Results -->
+
+<br>
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title">Top Articles</h3>
+  </div>
+  <div class="panel-body">
+    <div id="searchResults">
+    	
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+	
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="javascript.js"></script>
+</body>
 </html>
